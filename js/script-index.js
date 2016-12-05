@@ -2,6 +2,8 @@ $(document).ready( function(){
 	$('a.js-back').css("display", "none");
 	$("div.callout-news").append('<h4>NUEVAS RECETAS</h4>');
 
+
+
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
@@ -16,6 +18,13 @@ function printNews(){
 * marcado el atributo "highlighted" como TRUE
 */
 function renderHighlightedRecipes(recipesArray) {
+	for (i=0;i<recipesArray.length;i++){
+		 if (recipesArray[i].highlighted== true) {
+      		// console.log("se encuentra objeto!.");
+      		renderRecipe(recipesArray[i]);
+		}
+		
+	}
 	console.log('Recipes: ', recipesArray);
 }
 
